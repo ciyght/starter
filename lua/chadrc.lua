@@ -24,4 +24,26 @@ M.ui = {
   },
 }
 
+M.base46 = {
+  integrations = {
+    "blankline",
+    "cmp",
+    "defaults",
+    "devicons",
+    "git",
+    "lsp",
+    "mason",
+    "nvcheatsheet",
+    "nvdash",
+    "nvimtree",
+    "statusline",
+    "syntax",
+    "tbline",
+    "telescope",
+    "treesitter",
+    "rainbowdelimiters",
+    "todo",
+  },
+}
+
 return M
