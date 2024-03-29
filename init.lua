@@ -49,7 +49,7 @@ opt.softtabstop = 4
 -- Line numbers
 opt.relativenumber = true
 
--- Horizontal ruler
+-- Vertical ruler
 autocmd("VimEnter", {
   pattern = "*",
   command = "set colorcolumn=80",
