@@ -20,5 +20,7 @@ return {
       end
     }
   )
+  local chktex = require('lint').linters.chktex
+    chktex.args = {'-n8', '-v0', '-I0', '-s', ':', '-f', '%l%b%c%b%d%b%k%b%n%b%m%b%b%b'}
   end
 }
