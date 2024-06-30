@@ -16,6 +16,7 @@ return{
       -- c/cpp stuff
       "clangd",
       "clang-format",
+      "omnisharp",
 
       -- python
       "black",
