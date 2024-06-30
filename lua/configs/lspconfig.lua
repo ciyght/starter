@@ -41,7 +41,8 @@ lspconfig.omnisharp.setup({
     end)
     return false
   end,
+  on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
-  cmd = { "/home/koen/.local/share/nvim/mason/bin/omnisharp", "--languageserver" , "--hostPID", tostring(vim.fn.getpid()) }
+  cmd = { "/home/koen/.local/share/nvim/mason/bin/omnisharp" }
 })

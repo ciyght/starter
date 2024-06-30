@@ -10,6 +10,7 @@ return {
       "typescript",
       "tsx",
       "c",
+      "c_sharp",
       "markdown",
       "markdown_inline",
       "python",
@@ -17,5 +18,5 @@ return {
     indent = {
       enable = true,
     }
-  }
+  },
 }
