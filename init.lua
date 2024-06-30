@@ -39,12 +39,17 @@ end)
 local autocmd = vim.api.nvim_create_autocmd
 local opt = vim.opt
 
--- Indenting
-opt.expandtab = true
-opt.shiftwidth = 4
-opt.smartindent = true
-opt.tabstop = 4
-opt.softtabstop = 4
+-- Override NvChad indentation
+autocmd("BufEnter", {
+  pattern = "*",
+  callback = function ()
+    opt.expandtab = true
+    opt.shiftwidth = 4
+    opt.smartindent = true
+    opt.tabstop = 4
+    opt.softtabstop = 4
+  end
+})
 
 -- Line numbers
 opt.relativenumber = true
