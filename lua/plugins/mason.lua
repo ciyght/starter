@@ -16,7 +16,7 @@ return{
       -- c/cpp stuff
       "clangd",
       "clang-format",
-      "omnisharp",
+      "omnisharp@v1.39.8",
 
       -- python
       "black",
