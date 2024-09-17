@@ -23,20 +23,6 @@ lspconfig.clangd.setup({
   cmd = { "clangd", "--offset-encoding=utf-16" },
 })
 
-lspconfig.rust_analyzer.setup({
-    on_attach = nvlsp.on_attach,
-    capabilities = nvlsp.capabilities,
-    filetypes = { "rust" },
-    root_dir = util.root_pattern("Cargo.toml"),
-    settings = {
-        ['rust-analyzer'] = {
-            cargo = {
-                allFeatures = true,
-            }
-        }
-    }
-})
-
 lspconfig.omnisharp.setup({
   -- configure omnisharp to fix the semantic tokens bug (really annoying)
   omnisharp = function(_, _)
