@@ -26,7 +26,11 @@ return{
 
       -- LaTeX
       "texlab",
-      "ltex-ls"
+      "ltex-ls",
+
+      -- rust
+      "codelldb",
+      "rust_analyzer",
     }
   }
 }

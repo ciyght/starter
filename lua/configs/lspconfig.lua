@@ -17,9 +17,23 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.clangd.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
   cmd = { "clangd", "--offset-encoding=utf-16" },
+})
+
+lspconfig.rust_analyzer.setup({
+    on_attach = nvlsp.on_attach,
+    capabilities = nvlsp.capabilities,
+    filetypes = { "rust" },
+    root_dir = util.root_pattern("Cargo.toml"),
+    settings = {
+        ['rust-analyzer'] = {
+            cargo = {
+                allFeatures = true,
+            }
+        }
+    }
 })
 
 lspconfig.omnisharp.setup({
@@ -41,8 +55,8 @@ lspconfig.omnisharp.setup({
     end)
     return false
   end,
-  on_attach = on_attach,
+  on_attach = nvlsp.on_attach,
   on_init = on_init,
-  capabilities = capabilities,
+  capabilities = nvlsp.capabilities,
   cmd = { "/home/koen/.local/share/nvim/mason/bin/omnisharp" }
 })
