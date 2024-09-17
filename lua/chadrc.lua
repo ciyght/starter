@@ -20,7 +20,7 @@ local options = {
         "rainbowdelimiters",
         "todo",
       },
-    }
+    },
 
     ui = {
       theme = "gruvchad",
@@ -39,7 +39,7 @@ local options = {
         separator_style = "arrow",
         overriden_modules = nil,
       },
-    }
+    },
 
     -- lazyload it when there are 1+ buffers
     tabufline = {
