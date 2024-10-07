@@ -14,6 +14,10 @@ return {
       "markdown",
       "markdown_inline",
       "python",
+      "rust",
+      "r",
+      "rnoweb",
+      "yaml"
     },
     indent = {
       enable = true,
