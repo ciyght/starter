@@ -6,7 +6,7 @@ local util = require "lspconfig/util"
 
 -- EXAMPLE
 local nvlsp = require "nvchad.configs.lspconfig"
-local servers = { "html", "cssls", "ts_ls", "pyright", "texlab", "ltex" }
+local servers = { "html", "cssls", "ts_ls", "pyright", "texlab" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -22,6 +22,14 @@ lspconfig.clangd.setup({
   capabilities = nvlsp.capabilities,
   cmd = { "clangd", "--offset-encoding=utf-16" },
 })
+
+lspconfig.ltex.setup({
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
+    root_dir = util.root_pattern("main.tex")
+})
+
 
 lspconfig.omnisharp.setup({
   -- configure omnisharp to fix the semantic tokens bug (really annoying)
@@ -43,7 +51,7 @@ lspconfig.omnisharp.setup({
     return false
   end,
   on_attach = nvlsp.on_attach,
-  on_init = on_init,
+  on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
   cmd = { "/home/koen/.local/share/nvim/mason/bin/omnisharp" }
 })
